@@ -1,0 +1,34 @@
+{
+  "name": "octano-test",
+  "version": "1.0.0",
+  "description": "Rock paper scisors for octano test",
+  "main": "app.js",
+  "dependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.6",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "fastify": "^2.8.0",
+    "fastify-mongodb": "^1.0.1",
+    "jest": "^24.9.0",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "webpack": "^4.39.3",
+    "webpack-dev-server": "^3.8.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "npm run jest",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bluesrv/octatest.git"
+  },
+  "author": "Sebastian Ramirez",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bluesrv/octatest/issues"
+  },
+  "homepage": "https://github.com/bluesrv/octatest#readme"
+}
