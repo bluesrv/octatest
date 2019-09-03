@@ -1,0 +1,1 @@
+exports.dbAddress = "mongodb://localhost/ocatnotest";

@@ -1,22 +1,20 @@
 const fastify = require('fastify')({logger: true});
+const mongoose = require('mongoose');
+const {dbAddress} = require('./config');
 
-// fastify.register(require('fastify-mongodb'), {
-//     forceClose: true,
-    
-//     url: 'mongodb://mongo/mydb'
-// });
+mongoose.connect(dbAddress)
+    .then(() => console.log("MongoDB connected..."))
+    .catch(err => console.log(err));
 
-fastify.get("/*", {}, async (req, res) => {
-    return {hello: "world"};
-});
+fastify.register(require('./routes/apiRoutes'));
 
 const start = async () => {
-    try {
-      await fastify.listen(3000)
-      fastify.log.info(`server listening on ${fastify.server.address().port}`)
-    } catch (err) {
-      fastify.log.error(err)
-      process.exit(1)
+        try {
+            await fastify.listen(3000);
+            fastify.log.info(`server listening on ${fastify.server.address().port}`);
+        } catch (err) {
+            fastify.log.error(err);
+            process.exit(1);
+        }
     }
-  }
-  start()
+start()
